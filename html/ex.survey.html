@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>survey form</title>
+</head>
+<body>
+    
+<!--
+설문조사폼 실습
+*기본정보 : 이름, 나이, 이메일, 성별
+*관심분야 : 프로그래밍, 데이터베이스, 스크립트, AI 중 다중 선택
+*설문항목
+  1. 강의에 대한 만족도 1~10점
+  2. 기술적 성취도 1~10점
+  3. 강의환경에 대한 만족도 1~10점
+  4. 멘토링에 대한 만족도 1~10점
+*기타의견
+*취소/확인 버튼
+-->
+
+<form name="surveyForm" action="" method="post">
+
+<fieldset>
+<legend>기본정보</legend>
+<p>
+    <label for="name">이름</label>
+    <input id="name" type="text" name="name" placeholder="이름을 입력하세요!">
+</p>
+<p>
+    <label for="age">나이</label>
+    <input id="age" type="number" name="age" 
+        min="20" max="150" placeholder="20~150">
+</p>
+<p>
+    <label for="email">이메일</label>
+    <input id="email" type="email" name="email" placeholder="이메일 주소를 입력하세요!">
+</p>
+<p>
+    <label for="gender">성별</label>
+    <input id="gender" type="radio" name="gender" value="male" checked> 남
+    <input id="gender" type="radio" name="gender" value="female"> 여
+</p>
+</fieldset>
+
+<fieldset>
+    <legend>관심분야</legend>
+    <p>
+        <input type="checkbox" name="programming" value="programming">프로그래밍
+        <input type="checkbox" name="database" value="database">데이터베이스
+        <input type="checkbox" name="script" value="script">스크립트
+        <input type="checkbox" name="domain" value="ai">AI
+    </p>
+</fieldset>
+
+<datalist id="ticklist">
+    <option value="1" label="1">
+    <option value="2" label="2">
+    <option value="3" label="3">
+    <option value="4" label="4">
+    <option value="5" label="5">
+    <option value="6" label="6">
+    <option value="7" label="7">
+    <option value="8" label="8">
+    <option value="9" label="9">
+    <option value="10" label="10">
+  </datalist>
+
+<fieldset>
+    <legend>설문항목</legend>
+    <p>
+        1. 강의에 대한 만족도 1~10점
+        <input type="range" name="survey1" min="1" max="10" 
+            step="1" value="5" list="ticklist" 
+    oninput="javascript:document.querySelector('#survey1text').innerHTML=this.value">
+        <span id="survey1text">5</span>
+    </p>
+    <p>
+        2. 기술적 성취도 1~10점
+        <input type="range" name="survey2" min="1" max="10" 
+            step="1" value="5" list="ticklist" 
+    oninput="javascript:document.querySelector('#survey2text').innerHTML=this.value">
+        <span id="survey2text">5</span>
+    </p>
+    <p>
+        3. 강의환경에 대한 만족도 1~10점
+        <input type="range" name="survey3" min="1" max="10" 
+            step="1" value="5" list="ticklist" 
+    oninput="javascript:document.querySelector('#survey3text').innerHTML=this.value">
+        <span id="survey3text">5</span>
+    </p>
+    <p>
+        4. 멘토링에 대한 만족도 1~10점
+        <input type="range" name="survey4" min="1" max="10" 
+            step="1" value="5" list="ticklist" 
+    oninput="javascript:document.querySelector('#survey4text').innerHTML=this.value">
+        <span id="survey4text">5</span>
+    </p>
+</fieldset>
+
+<fieldset>
+    <legend>기타의견</legend>
+    <textarea name="opinion" rows="10" cols="68"></textarea>
+</fieldset>
+
+<p>
+    <input type="reset" value="초기화">
+    <input type="submit" value="전송">
+</p>
+
+</form>
+
+</body>
+</html>

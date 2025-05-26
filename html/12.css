@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#wrapper {
+    width: 80%; 
+    background-color: lightgray;
+    margin: 0 auto;
+}
+header {
+    height: 120px;
+    background-color: orange;
+}
+li {
+    display: inline;
+}
+aside {
+    background-color: beige;
+}
+aside#left {
+    width: 11%;
+    float: left;
+}
+#content {
+    width: 70%;
+    float: left;
+    padding: 2%;
+}
+section {
+    width: 49%;
+    float: left;
+}
+aside#right {
+    width: 11%;
+    float: left;
+}
+footer {
+    clear: left;
+    height: 80px;
+    background-color: cyan;
+}

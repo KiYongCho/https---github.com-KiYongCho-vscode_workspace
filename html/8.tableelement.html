@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tableelement</title>
+    <style>
+        table, th, td { border: 1px solid #000; border-collapse: collapse; }
+    </style>
+</head>
+<body>
+    
+    <table>
+        <!-- 테이블 제목 -->
+         <caption>학생성적테이블</caption>
+         <!-- 테이블 헤더 -->
+         <thead>
+            <tr>
+                <th>이름</th>
+                <th>국어</th>
+                <th>영어</th>
+                <th>수학</th>
+            </tr>
+         </thead>
+         <!-- 테이블 데이터 -->
+         <tbody>
+            <tr>
+                <td>홍길동</td>
+                <td>100</td>
+                <td>100</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>강감찬</td>
+                <td>90</td>
+                <td>90</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>이순신</td>
+                <td>80</td>
+                <td>80</td>
+                <td>80</td>
+            </tr>
+         </tbody>
+         <!-- 테이블 요약 -->
+         <tfoot>
+            <tr>
+                <td>총점</td>
+                <td>270</td>
+                <td>270</td>
+                <td>270</td>
+            </tr>
+         </tfoot>
+    </table>
+
+    <!-- 행/열 합치기 -->
+    <!-- colspan : 열을 합칠때는 같은 tr내의 td를 개수만큼 삭제 -->
+    <!-- rowspan : 행을 합칠때는 다른 tr내의 td를 개수만큼 삭제-->
+    <table>
+        <caption>span</caption>
+        <thead>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2">O</td>
+                <td rowspan="2">O</td>
+                <td>O</td>
+            </tr>
+            <tr>
+                <td>O</td>
+                <td>O</td>
+                <td>O</td>
+            </tr>            
+        </tbody>
+    </table>
+
+    <!-- colspan/rowspan 실습 -->
+     <table>
+        <caption>colspan/rowspan 실습</caption>
+        <tbody>
+            <tr>
+                <td rowspan="2">O</td>
+                <td>O</td>
+                <td rowspan="2">O</td>
+                <td rowspan="2">O</td>
+            </tr>
+            <tr>
+                <td>O</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">O</td>
+                <td colspan="2">O</td>
+            </tr>
+            <tr>
+                <td colspan="2">O</td>
+            </tr>
+            <tr>
+                <td>O</td>
+                <td>O</td>
+                <td colspan="2" rowspan="2">O</td>
+            </tr>
+            <tr>
+                <td>O</td>
+                <td>O</td>
+            </tr>                      
+        </tbody>
+     </table>
+
+    <!-- 테이블 실습 -->
+    <table>
+        <caption>분기별 연봉</caption>
+        <thead>
+            <tr>
+                <th colspan="2">부서/성명/아이디</th>
+                <th colspan="2">분기별 연봉</th>
+                <th>비고</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">인사과</td>
+                <td>홍길동</td>
+                <td>3/4</td>
+                <td>1000</td>
+                <td>동결</td>
+            </tr>
+            <tr>
+                <td>HONG</td>
+                <td>4/4</td>
+                <td>1200</td>
+                <td>20% 인상</td>
+            </tr>
+            <tr>
+                <td rowspan="2">기획과</td>
+                <td>이순신</td>
+                <td>3/4</td>
+                <td>2000</td>
+                <td>동결</td>
+            </tr>
+            <tr>
+                <td>LEE</td>
+                <td>4/4</td>
+                <td>2200</td>
+                <td>10% 인상</td>
+            </tr>
+        </tbody>
+    </table>     
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

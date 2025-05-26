@@ -1,0 +1,20 @@
+body {
+    background-image: url("../html/assets/image.jpg");
+    /* background-repeat: repeat; */
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+div {
+    background-color: yellow;
+    font-size: 100px;
+    height: 5000px;
+}
+
+p {
+    background-image: url("../html/assets/image.jpg");
+    background-position: left;
+    background-repeat: no-repeat;
+}

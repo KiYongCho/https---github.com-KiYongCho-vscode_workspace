@@ -1,0 +1,17 @@
+* { margin: 0; padding: 0; }
+
+.flex-container {
+    display: flex;
+    flex-direction: row; /* 행 배치 */    
+    flex-wrap: wrap; /* 컨테이너를 벗어나면 아래로 */
+    justify-content: flex-start; /* 행의 시작점부터 배치 */
+    align-items: center; /* 세로의 중앙에 배치 */
+    padding: 20px 20px 0 20px;
+    background-color: cyan;
+}
+
+.flex-item {
+    display: block;
+    width: 400px;
+    margin: 0 20px 20px 0;
+}

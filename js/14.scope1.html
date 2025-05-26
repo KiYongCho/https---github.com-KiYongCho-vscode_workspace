@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scope1</title>
+</head>
+<body>
+    <script>
+        // 웹브라우져 환경에서 전역객체는 window
+        // 웹브라우져 환경에서 전역에 선언된 전역변수는 window의 프라퍼티
+        var v = 1; // 전역변수
+        console.log(v); // 1
+        console.log(window.v); //1
+
+        function print() {
+            console.log('print함수 호출됨!');            
+        }
+        print(); // print함수 호출됨!
+
+        window.print();  // print함수 호출됨! 
+
+        // alert('하이룽~!');
+        // window.alert('방가방가~!');
+
+        // let, const로 선언한 변수는 window전역객체의 프라퍼티가 아님!
+        let l = 2;
+        console.log(l); // 2
+        console.log(window.l); // undefined
+    </script>
+</body>
+</html>

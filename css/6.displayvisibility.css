@@ -1,0 +1,32 @@
+p, li {
+    background-color: orange;
+    font-size: 2em;
+}
+
+/*
+    display : 영역을 가짐
+    visibility : 영역을 가지지 않음
+*/
+
+#p1 {
+    display: block; /* 영역을 가지게 함 */
+    visibility: visible; /* 화면에 보이게 함 */
+    opacity: 0.5; /* 투명도 0.0(투명)~1.0(불투명) */
+}
+
+#p2 {
+    /* 영역도 사라지고 화면에도 보이지 않음 */
+    /* display: none; */
+    /* 영역은 존재하지만 화면에 안보임 */
+    visibility: hidden; 
+}
+
+ul > li {
+    /* inline으로 표시되지만 영역은 가짐 */
+    /* width, height, padding, margin 적용 가능 */
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    margin: 20px;
+}

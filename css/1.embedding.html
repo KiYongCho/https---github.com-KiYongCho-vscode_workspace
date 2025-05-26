@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>embedding</title>
+    <!--
+        external style
+        - HTML페이지내에 link요소를 사용해서 외부CSS파일을 불러와 사용
+        - HTML과 CSS가 잘 분리되고 모듈화되어서 좋은 방식
+    -->
+    <!-- CSS 초기화 -->
+    <link rel="stylesheet" href="meyer.css">
+    <link rel="stylesheet" href="1.css">
+    <style>
+        /*
+            internal style
+            - HTML페이지내에 style요소를 사용해서 페이지내의 스타일을 정의
+            - 다른 HTML페이지에서는 사용할 수 없으므로 모듈화에 문제. 좋지 않은 방식
+        */
+        p {
+            border: 3px dashed red;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- 
+        inline style
+        - 요소내에 style속성을 사용해서 CSS를 정의
+        - HTML코드와 CSS코드가 혼재되어서 좋지 않은 방식
+    -->
+    <p style="font-size: 40px; color: blue;">문장입니다!</p>
+
+</body>
+</html>
+
+
+
+
+
+
+

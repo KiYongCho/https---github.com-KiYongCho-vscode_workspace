@@ -1,0 +1,80 @@
+body {
+    height: 2000px;
+    margin: 0;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+/* static
+  - 화면 흐름에 따라 좌->우, 위->아래 배치
+  - top, right, bottom, left 사용 불가
+*/
+.static-box {
+    position: static; /* 기본값 */
+    background-color: gray;
+}
+
+/* relative
+  - 부모 엘리먼트 기준으로 배치
+*/
+.relative-box {
+    position: relative;
+    top: 50px;
+    left: 50px;
+    background-color: blue;
+}
+
+/*
+    position이 absolute인 요소의 기준 요소
+*/
+.absolute-container {
+    position: relative;
+    height: 200px;
+    background-color: #eee;
+}
+
+/* absolute
+  - 상위 요소 중에서 static이 아닌 가장 가까운 요소를 기준으로 위치
+  - 상위 요소 중에 static이 아닌 요소가 없다면 body를 기준으로 위치
+*/
+.absolute-box {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    background-color: red;
+}
+
+/* fixed
+  - 스크롤 여부와 관계없이 고정 위치
+*/
+.fixed-box {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    background-color: green;
+}
+/*
+    sticky를 담고 있는 컨테이너
+*/
+.sticky-container {
+    height: 600px;
+    margin-top: 40px;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+/* sticky
+  - 스크롤 되다가 벽에 부딪치면 고정
+*/
+.sticky-box {
+    position: sticky;
+    top: 0;
+    background-color: orange;
+}
