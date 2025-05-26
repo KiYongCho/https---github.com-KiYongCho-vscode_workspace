@@ -100,7 +100,7 @@ console.log('Cat' && 'Dog'); // 'Dog'
 
 // || 연산은 양쪽 항 중의 하나가 true면 true
 // 'Cat'은 true이므로 || 뒤를 평가할 필요가 없음
-console.log('Cat' || 'Dog'); // 'Cat'
+console.log('Cat' || 'Dog'); //  'Cat'
 
 
 
