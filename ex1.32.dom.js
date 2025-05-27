@@ -18,4 +18,12 @@ document.body.innerHTML = `
 `;
 
 // 방법 2)
+const fruitArr = ['사과', '딸기', '포도', '복숭아'];
+const ul = document.createElement('ul');
+for (let ele of fruitArr) {
+    const li = document.createElement('li');
+    li.textContent = ele;
+    ul.appendChild(li);
+}
+document.body.appendChild(ul);
 
