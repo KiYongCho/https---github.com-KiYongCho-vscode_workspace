@@ -17,6 +17,7 @@ let count = 1;
 // 추가
 addBtn.addEventListener('click', () => {
     const li = document.createElement('li');
+    li.setAttribute('data-order', count);
     li.textContent = count++;
     list.appendChild(li);
 });
@@ -37,7 +38,16 @@ initBtn.addEventListener('click', () => {
 
 // 번호선택 삭제
 selRemoveBtn.addEventListener('click', () => {
-    console.log(txt.value);    
+    // document.querySelectorAll('li') : 모든 li요소를 NodeList로 반환
+    // ...document.querySelectorAll('li') : 스프레드
+    // [...document.querySelectorAll('li')] : 모든 li요소를 요소로 갖는 배열
+    //                                                      => Array.from(document.querySelectorAll('li'))
+    // find : 콜백함수의 조건에 맞는 요소 반환
+    // li=>li.dataset.order==txt.value : li요소 중에서 data-order가 입력한 값과 같은 li
+    const removeLi = [...document.querySelectorAll('li')]
+                                .find(li=>li.dataset.order==txt.value);
+    // 삭제할 li가 존재한다면 제거
+    if (removeLi) list.removeChild(removeLi);
 });
 
 
