@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>manipulation</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+          console.log($('#p1').text()); // text 가져오기
+          console.log($('#p1').html()); // html 가져오기
+          console.log($('a').attr('href')); // 속성값 가져오기
+          $('a').attr('href', 'https://www.naver.com'); // 속성값 변경
+          $('a').append('append'); // 요소 컨텐츠 뒤
+          $('a').prepend('prepend'); // 요소 컨텐츠 앞
+          $('a').after('after'); // 요소 뒤
+          $('a').before('before'); // 요소 앞
+          $('button').click(e => {
+            console.log($('#txt').val());
+            //$('a').remove(); // 요소 제거 (요소와 하위요소 모두)
+            $('p').empty(); // 요소의 하위요소 모두 제거
+          });
+        });
+    </script>
+</head>
+<body>
+    <p id="p1">
+        <a href="https://www.google.com">구글로 이동</a>&nbsp;
+        <input id="txt" type="text">&nbsp;
+        <button>클릭</button>
+    </p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

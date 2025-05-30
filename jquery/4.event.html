@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $('#div1').mouseenter(e => {
+                console.log('div에 마우스 커서 진입!');                
+            });
+            $('#div1').mouseleave(e => {
+                console.log('div에서 마우스 커서 벗어남!');                
+            });
+        });
+
+        // 실습
+        // 1번 버튼을 클릭하면 div의 크기를 2배 확대, 다시 클릭하면 2배 축소
+        // 2번 버튼을 클릭하면 div가 우측으로 100px 이동, 다시 클릭하면 원위치
+        // 3번 버튼을 클릭하면 div를 동그랗게, 다시 클릭하면 원상태
+
+        $(function() {
+
+          let isWided = false;
+          let isMoved = false;
+          let isRounded = false;
+
+          $('button').click(e => {
+            switch (e.target.textContent) {
+              case '1번 버튼': {
+                const currWidth = $('#div1').width();
+                const currHeight = $('#div1').height();
+                if (!isWided) {
+                  $('#div1').animate({
+                      width: currWidth * 2,
+                      height: currHeight * 2
+                  }, () => { isWided = true });
+                } else {
+                    $('#div1').animate({
+                      width: currWidth / 2,
+                      height: currHeight / 2
+                  }, () => { isWided = false });
+                }
+                break;
+              };
+              case '2번 버튼': {
+                $('#div1').css('position', 'absolute');
+                if (!isMoved) {
+                    $('#div1').animate({left: '+=100px'});
+                    isMoved = true;
+                } else {
+                    $('#div1').animate({left: '-=100px'});
+                    isMoved = false;
+                }
+                break;
+              }
+              case '3번 버튼': {
+                if (!isRounded) {
+                    $('#div1').animate({'border-radius': '+=50px'});
+                    isRounded = true;
+                } else {
+                    $('#div1').animate({'border-radius': '-=50px'});
+                    isRounded = false;
+                }
+              }                
+            }
+          });
+        });
+
+
+    </script>
+    <style>div { width: 100px; height: 100px; background-color: yellow; }</style>
+</head>
+<body>
+    <p>
+        <button>1번 버튼</button>&nbsp;
+        <button>2번 버튼</button>&nbsp;
+        <button>3번 버튼</button>
+    </p>
+    <div id="div1"></div>
+</body>
+</html>

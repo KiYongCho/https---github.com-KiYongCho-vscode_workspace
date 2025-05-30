@@ -1,0 +1,88 @@
+<!--
+    [jQuery AJAX 실습]
+    1. https://jsonplaceholder.typicode.com/todos GET방식 AJAX 요청
+    2. 데이터로딩 버튼을 클릭하면 테이블을 생성해서 테이블에 가져온 데이터를 출력
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jqueryajax 실습</title>
+    <style>
+        table { width: 1024px; }
+        table, th, td { border: 1px solid #333; border-collapse: collapse; }
+        th, td { font-size: 1.2em; }
+        th { background-color: #333; color: #fff; }
+        td { text-align: center; }
+        td.title { text-align: left; padding-left: 10px; }
+    </style>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(() => {
+
+          const makeTable = posts => {
+            $('table').remove();
+            const table = $('<table></table>');
+            table.append("<colgroup><col width='10%'><col width='8%'><col width='68%'><col width='14%'></colgroup>");
+            table.append('<tr><th>userId</th><th>id</th><th>title</th><th>completed</th></tr>');
+            for (let post of posts) {
+                const tr = $('<tr></tr>');
+                tr.append(`
+                  <td>${post.userId}</td>
+                  <td>${post.id}</td>
+                  <td class='title'>${post.title}</td>
+                  <td>${post.completed ? '완료' : '미완료'}</td>
+                `);
+                table.append(tr);
+            }
+            $('body').append(table);
+          };
+
+          $('button').on('click', e => {
+            $.ajax({
+                url: 'https://jsonplaceholder.typicode.com/todos',
+                method: 'GET',
+                dataType: 'json'
+            })
+            .done(posts => makeTable(posts))
+            .fail((xhr, status, error) => {
+              console.log(`에러상태:${status}\nXHR상태코드값:${xhr.status}\n에러메세지:${error}`);                  
+            })
+            .always(() => {
+              console.log('데이터 로딩 완료!');
+            }); 
+          });
+
+        });
+    </script>
+</head>
+<body>
+    <p><button>데이터로딩</button></p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

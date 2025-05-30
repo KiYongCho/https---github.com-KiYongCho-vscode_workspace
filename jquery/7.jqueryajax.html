@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jqueryajax</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+
+           $('#btn1').click(e => {
+
+            //   $.ajax({
+            //     url: 'https://jsonplaceholder.typicode.com/posts', // 요청URL
+            //     method: 'GET', // 요청 방식
+            //     dataType: 'json', // 응답 데이터 타입
+            //     success: function(data) { // 요청 성공 콜백, data:서버에서 보내준 data(JSON배열)
+            //         let res = '';
+            //         for (let post of data) {
+            //           res += 'userId : ' + post.userId;
+            //           res += ', id : ' + post.id;
+            //           res += ', title : ' + post.title;
+            //           res += ', body : ' + post.body + '<br><br>';
+            //         }
+            //         $('#p1').html(res);                    
+            //     }
+            //   });
+
+            //   $.get('https://jsonplaceholder.typicode.com/posts', function(data) {
+            //     let res = '';
+            //     for (let post of data) {
+            //         res += 'userId : ' + post.userId;
+            //         res += ', id : ' + post.id;
+            //         res += ', title : ' + post.title;
+            //         res += ', body : ' + post.body + '<br><br>';
+            //     }
+            //     $('#p1').html(res);               
+            //   });
+
+           });
+
+           $('#btn2').click(e => {
+
+              $.ajax({
+                url: 'https://jsonplaceholder.typicode.com/posts',
+                method: 'POST',
+                data: { // 요청데이터 (payload)
+                    userId: 1,
+                    title: '제목',
+                    body: '내용내용내용'
+                },
+                dataType: 'json',
+                success: function(response) {
+                    $('#p1').html(JSON.stringify(response));                    
+                },
+                error: function(err) {
+                    alert('에러 발생!');
+                }
+            })
+            .always(function() {
+                alert('성공/실패와 상관없이 수행됨!');
+            });            
+
+            //  $.post(
+            //     'https://jsonplaceholder.typicode.com/posts', 
+            //     {
+            //         userId: 1,
+            //         title: '제목',
+            //         body: '내용내용내용'
+            //     },
+            //     function(response) {
+            //         // JSON.stringify : JSON객체를 JSON문자열로 변환                    
+            //         $('#p1').html(JSON.stringify(response)); 
+            //     }
+            // );
+
+          }); // click
+
+        }); // $(function
+
+    </script>
+</head>
+<body>
+    <p id="p1"></p>
+    <p>
+        <button id="btn1">데이터 불러오기 (GET)</button>&nbsp;
+        <button id="btn2">데이터 등록 (POST)</button>
+    </p>
+</body>
+</html>

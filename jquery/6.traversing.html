@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>traversing</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            console.log($('ul').parent()[0]); // ul의 첫번째 부모            
+            console.log($('li:first').parents()); // 첫번째 li의 모든 부모들
+            console.log($('li:first').parentsUntil('div')); // 첫번째 li의 부모들 중 div전까지의 부모들  
+            console.log($('ul').children()); // ul 자식요소들            
+            console.log($('ul').find('li:last')); // ul 자식요소들 중 마지막 li            
+            console.log($('li:eq(1)').siblings()); // 두번째 li의 형제들            
+            console.log($('li:eq(1)').next().text()); // 두번째 li의 동생(우측)의 텍스트            
+            console.log($('li:eq(1)').prev().text()); // 두번째 li의 형(좌측)의 텍스트           
+            console.log($('li:first').nextAll()); // 첫번째 li의 모든 동생들            
+            console.log($('ul li').first()); // ul 하위의 li들 중 첫번째 li            
+            console.log($('ul li').last()); // ul 하위의 li들 중 마지막 li                        
+            console.log($('li').filter('.li')); // li 중에서 클래스가 li인 li        
+            console.log($('li.li')); // li 중에서 클래스가 li인 li
+            console.log($('li').not('.li')); // li 중에서 클래스가 li가 아닌 li
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <ul>
+            <li class="li">1</li>
+            <li>2</li>
+            <li class="li">3</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

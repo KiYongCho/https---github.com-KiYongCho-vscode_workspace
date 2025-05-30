@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hellojQuery</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        // jQuery long version
+        // $(document).ready(function() { // 문서가 메모리에 모두 로딩되면 콜백 수행
+        //    $('#btn').click(e => {
+        //     alert('안녕하세요! jQuery입니다!');
+        //    });
+        // });
+
+        // jQuery short version
+        // $(function() { // 문서가 메모리에 모두 로딩되면 콜백 수행
+        //    $('#btn').click(e => {
+        //     alert('안녕하세요! jQuery입니다!');
+        //    });
+        // });        
+
+        // dom version
+        window.onload = function() {
+          document.getElementById('btn').addEventListener('click', e => {
+            alert('안녕하세요! jQuery입니다!');
+          });
+        };
+
+    </script>
+</head>
+<body>
+    <p>
+        <button id="btn">클릭</button>
+    </p>
+</body>
+</html>
