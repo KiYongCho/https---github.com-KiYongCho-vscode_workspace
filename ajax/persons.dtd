@@ -1,0 +1,8 @@
+<!ELEMENT persons (person+)>
+<!ELEMENT person (name, age, address)>
+<!ATTLIST person
+    pid ID #REQUIRED
+>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
