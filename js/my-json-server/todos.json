@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "todo": "할일1",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "todo": "할일2",
+      "completed": false
+    },
+    {
+      "id": "3",
+      "todo": "3",
+      "completed": false
+    }
+  ]
+}

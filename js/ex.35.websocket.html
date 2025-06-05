@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>websocket</title>
+    <style>
+        body { font-family: sans-serif; padding: 2rem; }
+        #messages { margin-top: 1rem; }
+        .message { padding: 0.5rem; border-bottom: 1px solid #ddd; }
+    </style>
+    <script>
+    // 윈도우가 로딩되면 콜백 수행
+    window.onload = () => {
+        // 클라이언트 웹소켓 생성
+        const socket = new WebSocket('ws://localhost:7575');
+        const messages = document.querySelector('#messages');
+        // 서버에서 메세지가 오면 수행할 콜백
+        socket.onmessage = e => {
+            messages.className = 'message';
+            messages.textContent = e.data;
+        };
+        // 클라이언트 연결 콜백
+        socket.onopen = () => {
+            console.log('클라이언트가 서버에 연결됨!');            
+        };
+        // 클라이언트 종료 콜백
+        socket.onclose = () => {
+            console.log('클라이언트가 서버 연결 종료됨!');            
+        }
+    };
+    </script>
+</head>
+<body>
+    <p id="messages"></p>
+</body>
+</html>
