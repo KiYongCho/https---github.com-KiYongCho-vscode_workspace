@@ -1,2 +1,2 @@
 const greeting: string = 'Hello Typescript!';
-console.log(greeting);
+console.log(greeting); 
