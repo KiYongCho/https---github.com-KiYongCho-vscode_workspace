@@ -54,7 +54,7 @@ else console.log('윤년아님');
 let a = 25;
 let b = 47;
 let c = 39;
-let max = a>b ? (a>c ? a : c) : (b>c ? b : c);
+let max = a>=b ? (a>=c ? a : c) : (b>=c ? b : c);
 console.log('세 수 중 가장 큰 수 : ' + max);
 
 // 7. 팩토리얼(factorial) 계산해서 출력
