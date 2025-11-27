@@ -60,9 +60,9 @@ console.log('세 수 중 가장 큰 수 : ' + max);
 // 7. 팩토리얼(factorial) 계산해서 출력
 // 팩토리얼 : 1부터 해당 수까지 곱한 수
 // ex) 5팩토리얼 = 1 * 2 * 3 * 4 * 5
-let fact = 7;
+let num = 7;
 let result = 1;
-for (let i=1; i<=fact; i++) {
+for (let i=1; i<=num; i++) {
     result *= i;
 }
 console.log(`${fact} 팩토리얼 결과 : ${result}`);
