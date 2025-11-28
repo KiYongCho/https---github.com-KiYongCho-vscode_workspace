@@ -172,17 +172,13 @@ console.log();
 
 const line = 9;
 const middle = (line+1)/2;
-
+let zeroCnt, starCnt = 0;
 for (let i=1; i<line+1; i++) {
-    if (i<=middle) {
-        for (let j=1; j<=middle-i; j++) process.stdout.write('0');
-        for (let j=1; j<=i*2-1; j++) process.stdout.write('*');
-        for (let j=1; j<=middle-i; j++) process.stdout.write('0');
-    } else {
-        for (let j=1; j<=i-middle; j++) process.stdout.write('0');
-        for (let j=1; j<=line-(i-middle)*2; j++) process.stdout.write('*');
-        for (let j=1; j<=i-middle; j++) process.stdout.write('0');
-    }
+    zeroCnt = i<=middle ? middle-i : i-middle;
+    starCnt = i<=middle ? i*2-1 : line-(i-middle)*2;
+    for (let j=0; j<zeroCnt; j++) process.stdout.write('0');    
+    for (let j=0; j<starCnt; j++) process.stdout.write('*');
+    for (let j=0; j<zeroCnt; j++) process.stdout.write('0');    
     console.log();
 }
 
@@ -201,16 +197,13 @@ console.log();
 
 const line2 = 9
 const middle2 = (line2+1)/2;
+let starCnt2, zeroCnt2 = 0;
 for (let i=1; i<=line2; i++) {
-    if (i<=middle2) {
-        for (let j=1; j<=i-1; j++) process.stdout.write('*');
-        for (let j=1; j<=(middle2-i)*2+1; j++) process.stdout.write('0');
-        for (let j=1; j<=i-1; j++) process.stdout.write('*');
-    } else {
-        for (let j=1; j<=line2-i; j++) process.stdout.write('*');
-        for (let j=1; j<=(i-middle2)*2+1; j++) process.stdout.write('0');
-        for (let j=1; j<=line2-i; j++) process.stdout.write('*');
-    }
+    starCnt2 = i<=middle2 ? i-1 : line2-i;
+    zeroCnt2 = i<=middle2 ? (middle2-i)*2+1 : (i-middle2)*2+1;
+    for (let j=1; j<=starCnt2; j++) process.stdout.write('*');
+    for (let j=1; j<=zeroCnt2; j++) process.stdout.write('0');
+    for (let j=1; j<=starCnt2; j++) process.stdout.write('*');
     console.log();    
 }
 
