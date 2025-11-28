@@ -160,28 +160,28 @@ for (let i=1; i<10; i++) {
 console.log();
 
 // 9. 9by9 diamond
-// ****0****
-// ***000***
-// **00000**
-// *0000000*
-// 000000000
-// *0000000*
-// **00000**
-// ***000***
-// ****0****
+// 0000*0000
+// 000***000
+// 00*****00
+// 0*******0
+// *********
+// 0*******0
+// 00*****00
+// 000***000
+// 0000*0000
 
 const line = 9;
 const middle = (line+1)/2;
 
 for (let i=1; i<line+1; i++) {
     if (i<=middle) {
-        for (let j=1; j<=middle-i; j++) process.stdout.write('*');
-        for (let j=1; j<=i*2-1; j++) process.stdout.write('0');
-        for (let j=1; j<=middle-i; j++) process.stdout.write('*');
+        for (let j=1; j<=middle-i; j++) process.stdout.write('0');
+        for (let j=1; j<=i*2-1; j++) process.stdout.write('*');
+        for (let j=1; j<=middle-i; j++) process.stdout.write('0');
     } else {
-        for (let j=1; j<=i-middle; j++) process.stdout.write('*');
-        for (let j=1; j<=line-(i-middle)*2; j++) process.stdout.write('0');
-        for (let j=1; j<=i-middle; j++) process.stdout.write('*');
+        for (let j=1; j<=i-middle; j++) process.stdout.write('0');
+        for (let j=1; j<=line-(i-middle)*2; j++) process.stdout.write('*');
+        for (let j=1; j<=i-middle; j++) process.stdout.write('0');
     }
     console.log();
 }
