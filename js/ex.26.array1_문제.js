@@ -52,14 +52,11 @@ console.log(unique);
 // 7
 // 3행 3열 배열을 만들고 1부터 9까지 채워서 출력
 let matrix = [];
-let count = 1;
 for (let i=0; i<3; i++) {
-    let row = [];
+    matrix[i] = [];
     for (let j=0; j<3; j++) {
-        row.push(count);
-        count++;
+        matrix[i][j] = i*3 + j + 1;
     }
-    matrix.push(row);
 }
 console.log(matrix);
 
