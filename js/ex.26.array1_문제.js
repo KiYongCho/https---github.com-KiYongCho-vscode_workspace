@@ -42,7 +42,6 @@ console.log(alphabet);
 let origin = [1, 3, 3, 5, 1, 7, 9, 9];
 let unique = [];
 for (let i=0; i<origin.length; i++) {
-    //if (unique.indexOf(origin[i]) == -1) {
     if (!unique.includes(origin[i])) {
         unique.push(origin[i]);
     }
