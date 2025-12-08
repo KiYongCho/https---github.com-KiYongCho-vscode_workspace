@@ -23,7 +23,7 @@ console.log(/^\d{3}-\d{4}-\d{4}$/.test(phone));
 // 5. 문자열에서 모든 URL을 추출
 // 결과 : ['https://google.com', 'http://example.com']
 const text1 = "Visit https://google.com and http://example.com!";
-console.log(text1.match(/https?:\/\/[\S]+/g));
+console.log(text1.match(/https?:\/\/[^\s|!]+/g));
 
 // 6. 주어진 문자열에서 숫자와 알파벳만 추출
 // 결과 : 'Hello123World456'
