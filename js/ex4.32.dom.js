@@ -23,12 +23,12 @@ let studentArr = [
     {num: 2, name: '강감찬', kor: 90, eng: 80, math: 70},
     {num: 3, name: '이순신', kor: 80, eng: 70, math: 60}
 ];
-// 과목별합계
-let sumArr = [0, 0, 0, 0];
-// 기본 정렬방식 : 내림차순
-let sortType = 'desc';
-// 기본데이터의 마지막번호
-let lastNum = studentArr.length;
+
+let sumArr = [0, 0, 0, 0]; // 과목별합계
+
+let sortType = 'desc'; // 기본 정렬방식 : 내림차순
+
+let lastNum = studentArr.length; // 기본데이터의 마지막번호
 
 // 데이터초기화 버튼 클릭시 init함수 호출
 document.querySelector('#initBtn').addEventListener('click', () => {
@@ -150,7 +150,6 @@ const deleteRow = e => {
             .find(tr => tr==e.target.parentNode.parentNode)
     );   
 };
-
 
 
 
